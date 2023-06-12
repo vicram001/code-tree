@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- jQuery Script -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<!-- Maphighlight Script -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+</head>
+<body>
+<header>
+<h1>Interactive HTML Image Map</h1>
+</header>
+<section id="text">
+      <h2>Top 15 Countries by GDP Based on World Bank 2021 Data</h2>
+      <h3>This page has been designed using HTML, CSS and JavaScript, it attempts to display an example of a HTML image map with JavaScript functionality.<br>The aim is to provide an example of how an image can be made interactive, a pop-up is activated when the cursor moves over specific areas of the map image. The data is based on 2021 World Bank data used in a Wikipedia page (see link below).</h3>
+  </section>
+  <div style="overflow-x: auto;">
+    <img src="images/world-map-1.jpg" alt="Estimated Top 15 Countries based on 2021 GDP" usemap="#top-15-gdp-map" class="maparea"/>
+  </div>
+  <map name="top-15-gdp-map" id="top-15-gdp-map">
+    <area shape="poly" coords="...." alt="United States of America: $22.9 trillion" title="1st. United States of America: $22.9 trillion">
+    <area shape="poly" coords="..." alt="United States of America: $22.9 trillion" title="1st. United States of America: $22.9 trillion">
+    <area shape="poly" coords="...." alt="2nd. China, People's Republic of: $17.7 trillion" title="2nd. China, People's Republic of: $17.7 trillion">
+    <area shape="poly" coords="....." alt="3rd. Japan: $4.9 trillion" title="3rd. Japan: $4.9 trillion">
+    <area shape="poly" coords="...." alt="4th. Germany: $4.2 trillion" title="4th. Germany: $4.2 trillion">
+    <area shape="poly" coords="....." alt="5th. UK: $3.18 trillion" title="5th. UK: $3.18 trillion">
+    <area shape="poly" coords="...." alt="6th. India: $3.17 trillion" title="6th. India: $3.17 trillion">
+    <area shape="poly" coords="....." alt="7th. France: $2.9 trillion" title="7th. France: $2.9 trillion">
+    <area shape="poly" coords="....." alt="8th. Italy: $2.1 trillion" title="8th. Italy: $2.1 trillion">
+    <area shape="poly" coords="....." alt="9th. Canada: $1.9 trillion" title="9th. Canada: $1.9 trillion">
+    <area shape="poly" coords="....." alt="10th. Russia: $1.7 trillion" title="10th. Russia: $1.7 trillion">
+    <area shape="poly" coords="....." alt="11th. South Korea: $1.7 trillion" title="11th. South Korea: $1.7 trillion">
+    <area shape="poly" coords="....." alt="12th. Brazil: $1.6 trillion" title="12th. Brazil: $1.6 trillion">
+    <area shape="poly" coords="....." alt="13th. Australia: $1.5 trillion" title="13th. Australia: $1.5 trillion">
+    <area shape="poly" coords="....." alt="14th. Spain: $1.4 trillion" title="14th. Spain: $1.4 trillion">
+    <area shape="poly" coords="....." alt="15th. Mexico: $1.2 trillion" title="15th. Mexico: $1.2 trillion">
+  </map>
+  <script>
+  $(function() {
+    $('.maparea').maphilight();
+});
+</script>
+</body>
+</html>
