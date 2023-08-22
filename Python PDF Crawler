@@ -1,0 +1,26 @@
+import PyPDF2
+import openpyxl
+
+def pdf_to_text(pdf_file):
+    text = ""
+    with open(pdf_file, "rb") as file:
+        pdf_reader = PyPDF2.PdfFileReader(file)
+        for page_num in range(pdf_reader.getNumPages()):
+            page = pdf_reader.getPage(page_num)
+            text += page.extractText()
+    return text
+
+def save_text_to_excel(text, excel_file):
+    workbook = openpyxl.Workbook()
+    sheet = workbook.active
+    lines = text.split("\n")
+    for row_num, line in enumerate(lines, 1):
+        sheet.cell(row=row_num, column=1, value=line)
+    workbook.save(excel_file)
+
+if __name__ == "__main__":
+    pdf_file = "File-to-read.pdf"
+    excel_file = "output.xlsx"
+
+    pdf_text = pdf_to_text(pdf_file)
+    save_text_to_excel(pdf_text, excel_file)
